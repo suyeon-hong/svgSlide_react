@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&family=Rajdhani:wght@300&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+ul, ol, li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+#root {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding: 25vh 10vw 10vh;
+  perspective: 400px; }
+  #root .App {
+    width: 100%;
+    height: 100%;
+    position: relative; }
+    #root .App h1 {
+      position: absolute;
+      top: -50px;
+      left: 0px;
+      font: 34px/1 'rajdhani';
+      color: #555; }
+      #root .App h1::before {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 2px;
+        background: #777;
+        margin-bottom: 5px; }
+    #root .App .btnUp {
+      display: block;
+      width: 61px;
+      height: 50px;
+      position: absolute;
+      left: -70px;
+      bottom: 160px; }
+      #root .App .btnUp:hover::before {
+        transform: rotate(45deg) translateY(-40px);
+        opacity: 0; }
+      #root .App .btnUp:hover::after {
+        transform: rotate(-45deg) translateY(-40px);
+        opacity: 0; }
+      #root .App .btnUp:hover span {
+        transform: translateY(-40px);
+        opacity: 0; }
+      #root .App .btnUp:hover p {
+        top: 50%;
+        opacity: 1; }
+      #root .App .btnUp::before, #root .App .btnUp::after {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 20px;
+        background: #777;
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform-origin: right top;
+        transition: .5s .2s; }
+      #root .App .btnUp::before {
+        transform: rotate(45deg); }
+      #root .App .btnUp::after {
+        transform: rotate(-45deg); }
+      #root .App .btnUp span {
+        display: block;
+        width: 1px;
+        height: 40px;
+        background: #777;
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transition: .5s; }
+      #root .App .btnUp p {
+        font: 12px/1 'orbitron';
+        color: #111;
+        text-align: center;
+        letter-spacing: 2px;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: .5s; }
+    #root .App .btnDown {
+      display: block;
+      width: 61px;
+      height: 50px;
+      position: absolute;
+      left: -70px;
+      bottom: 0px; }
+      #root .App .btnDown:hover::before {
+        transform: rotate(45deg) translateY(-40px);
+        opacity: 0; }
+      #root .App .btnDown:hover::after {
+        transform: rotate(-45deg) translateY(-40px);
+        opacity: 0; }
+      #root .App .btnDown:hover span {
+        transform: translateY(-40px);
+        opacity: 0; }
+      #root .App .btnDown:hover p {
+        bottom: 50%;
+        opacity: 1; }
+      #root .App .btnDown::before, #root .App .btnDown::after {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 20px;
+        background: #777;
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform-origin: right bottom;
+        transition: .5s .2s; }
+      #root .App .btnDown::before {
+        transform: rotate(45deg); }
+      #root .App .btnDown::after {
+        transform: rotate(-45deg); }
+      #root .App .btnDown span {
+        display: block;
+        width: 1px;
+        height: 40px;
+        background: #777;
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transition: .5s; }
+      #root .App .btnDown p {
+        font: 12px/1 'orbitron';
+        color: #111;
+        text-align: center;
+        letter-spacing: 2px;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: .5s; }
+    #root .App .panel {
+      width: 100%;
+      height: 100%;
+      position: relative; }
+      #root .App .panel li {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        perspective: 600px; }
+        #root .App .panel li.on .bg {
+          opacity: 1;
+          transform: translateY(0%) rotateX(0deg); }
+          #root .App .panel li.on .bg .pic path {
+            fill: rgba(0, 0, 0, 0.5);
+            stroke-dashoffset: 0; }
+        #root .App .panel li.up .bg {
+          opacity: 0;
+          transform: translateY(-80%) rotateX(50deg); }
+        #root .App .panel li.down .bg {
+          opacity: 0;
+          transform: translateY(80%) rotateX(-50deg); }
+        #root .App .panel li .bg {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          transition: 0.8s; }
+          #root .App .panel li .bg .pic {
+            width: 33vw;
+            position: absolute;
+            bottom: 5vh;
+            right: -5vw; }
+            #root .App .panel li .bg .pic path {
+              stroke: #111;
+              stroke-width: 1;
+              stroke-dasharray: 2300;
+              stroke-dashoffset: 2300;
+              fill: transparent;
+              transition: stroke-dashoffset 1.5s 0.5s, fill 0.3s 1.3s; }
+        #root .App .panel li:nth-of-type(1) .bg {
+          background: rgba(173, 216, 230, 0.5); }
+        #root .App .panel li:nth-of-type(2) .bg {
+          background: rgba(255, 192, 203, 0.5); }
+        #root .App .panel li:nth-of-type(3) .bg {
+          background: rgba(144, 238, 144, 0.5); }
+        #root .App .panel li:nth-of-type(4) .bg {
+          background: rgba(238, 130, 238, 0.5); }
+
+/*# sourceMappingURL=style.css.map */
